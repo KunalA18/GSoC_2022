@@ -1,1 +1,4 @@
 theme: jekyll-theme-hacker
+title: Jekyll tutorial
+url: index.md
+description: This is an amazing site I created while learning jekyll.

@@ -7,7 +7,8 @@ I joined the IRC and subscribed to libcamera's mailing list and started explorin
 ## Getting Warmed up
 Warmup tasks were provided under each project for new contributors to get familiar with the code base and complete the pre-requisites of the project interested in. I too started understanding and implementing these tasks.
 
-1. sjsf
+### 1. Building libcamera with the raspberrypi pipeline enabled
+- bhb
 2. 
 
 

@@ -10,7 +10,7 @@ Warmup tasks were provided under each project for new contributors to get famili
 ### 1. Building libcamera with the raspberrypi pipeline enabled and running qcam.
 - First I followed the [getting started](https://libcamera.org/getting-started.html) section on libcamera's website, which involved installing all dependencies and building libcamera. I was able to successfully build and test its working on my Linux PC.
 - To build and test it on my Raspberry Pi 3B, first I had to upgrade my Raspbian version from buster to bullseye. Also had to buy a 5MP Raspberry Pi 3B Camera Module for testing.
--  Since the Raspbian bullseye had libcamera and required libraries perbuilt, I was easily capture an image using 
+-  Since the Raspbian bullseye had libcamera and required libraries perbuilt, I was easily able to capture an image using 
 ```
 libcamera-jpeg -o test.jpg
 ```

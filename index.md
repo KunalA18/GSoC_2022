@@ -21,7 +21,8 @@ libcamera-jpeg -o test.jpg
 sudo ninja -C build install
 `` and running `build/src/qcam/qcam `, got the qcam running :). 
 
-<image src="https://user-images.githubusercontent.com/83249996/162377050-68ea8781-6c1c-4fa5-94a3-8f2a65888759.png" alt = "original"  width = 600> 
+![Screenshot from 2022-04-08 11-54-00](https://user-images.githubusercontent.com/83249996/162381907-d97d9915-8d10-4341-9b48-5b3e4a235fae.png)
+
    
 ### 2. Testing OpenGL on RaspberryPi 
 - To run openGL on Rpi, I first enabled ***OpenGL drivers*** using `sudo raspi-config` and performed a reboot.
@@ -33,11 +34,9 @@ sudo ninja -C build install
 ```
 - An executable was created named 'success' and on running it, boom! glfw window was displayed.
    
- 
-<image src="https://user-images.githubusercontent.com/83249996/162379029-2bccfd43-743e-48b5-86c4-adf411a8be84.png" alt = "original"  width = 600>
-   
-  
-    
+ ![Screenshot from 2022-04-08 12-10-25](https://user-images.githubusercontent.com/83249996/162381955-c8c68fc7-125e-4d61-b55d-aa0ac7801d14.png)
+
+
 <br>
 
 ### 3. Writing a standalone OpenGL application which takes an image and applies ISP function on it.
@@ -55,8 +54,10 @@ Repository link : [https://github.com/KunalA18/IP-openGL](https://github.com/Kun
    
 Original Image            |  Gamma correction
 :-------------------------:|:-------------------------:
-<image src="https://user-images.githubusercontent.com/83249996/162069982-9b99476b-c0a7-42c9-bab3-6ec0a5f695ff.png" alt = "original" width = 350> |   <image src="https://user-images.githubusercontent.com/83249996/162070112-c7bce182-80f7-4010-82b8-201f4f90118a.png" alt = "gamma_correction" width = 350> 
+![Screenshot from 2022-04-07 02-13-47](https://user-images.githubusercontent.com/83249996/162382007-6ae518cf-7df3-489a-9cf6-e774e64b397e.png) | ![Screenshot from 2022-04-07 02-09-31](https://user-images.githubusercontent.com/83249996/162382029-27e1cafe-8386-4935-b52f-64d38f5c4243.png)  
    
+
+
 
 
 

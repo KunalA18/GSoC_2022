@@ -21,7 +21,8 @@ libcamera-jpeg -o test.jpg
 sudo ninja -C build install
 `` and running `build/src/qcam/qcam `, got the qcam running :). 
 <h1 align ="center">
-<image src="https://user-images.githubusercontent.com/83249996/162377050-68ea8781-6c1c-4fa5-94a3-8f2a65888759.png" alt = "original"  width = 600>  
+<image src="https://user-images.githubusercontent.com/83249996/162377050-68ea8781-6c1c-4fa5-94a3-8f2a65888759.png" alt = "original"  width = 600> 
+   
 </h1>
 
 <br>
@@ -38,6 +39,7 @@ sudo ninja -C build install
    
  <h1 align ="center">
 <image src="https://user-images.githubusercontent.com/83249996/162379029-2bccfd43-743e-48b5-86c4-adf411a8be84.png" alt = "original"  width = 600>
+   
  </h1>  
     
 <br>

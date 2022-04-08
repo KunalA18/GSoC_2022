@@ -2,7 +2,7 @@ Hello, I am Kunal Agarwal from VJTI, Mumbai. This is the first time I'll be appl
 
 ## Getting Started
 
-I joined the IRC and subscribed to libcamera's mailing list and started exploring the project in detail. After discussion with mentors on IRC, I started with the Warmup tasks listed under my project. And to sum up my journey of completing all the warmup tasks, along with the challenges faced by me and how I solved them, I am writing this blog.
+I joined the IRC, subscribed to libcamera's mailing list and started exploring the project in detail. After discussion with mentors on IRC, I started with the Warmup tasks listed under my project. And to sum up my journey of completing all the warmup tasks, along with the challenges faced by me and how I solved them, I am writing this blog.
 
 ## Getting Warmed up
 Warmup tasks were provided under each project for new contributors to get familiar with the code base and complete the pre-requisites of the project interested in. I too started understanding and implementing these tasks.
@@ -19,21 +19,34 @@ libcamera-jpeg -o test.jpg
 - Finally after 
 ``
 sudo ninja -C build install
-``, got the qcam running :).
+``, got the qcam running :). 
+
+<br>
 
 ### 2. Testing OpenGL on RaspberryPi 
 - To run openGL on Rpi, I first enabled ***OpenGL drivers*** using `sudo raspi-config` and performed a reboot.
 - Next step involved installing glfw and other required packages.(You can find the installation steps in my Github repository. Link is shared in the next section of blog)
-- Finally i wrote a small test program and compiled it using 
+- Finally i wrote a small test program and compiled it using
 
 ```
-gcc test.cpp -lGL -lGLEW -lm -lglfw -o success
+   gcc test.cpp -lGL -lGLEW -lm -lglfw -o success
 ```
 - An executable was created named 'success' and on running it, boom! glfw window was displayed.
 
+<br>
+
 ### 3. Writing a standalone OpenGL application which takes an image and applies ISP function on it.
-
-
+- This was one of the most interesting yet overwhelming task for me as this made me learn a new language - OpenGL from scratch.   
+P.S. OpenGl is not exactly a language, but a kind of API, which helps in interacting with GPU, to achieve hardware-accelerated rendering
+- My interest in Image processing drove me towards completing this task. As a beginner, I started looking at few tutorials and documentation of OpenGl.
+- Next step involved setting up OpenGl by installing all dependencies. (All installation steps are mentioned in my github repository, shared below)
+- Finally after setting it up, I wrote a test (hello world) program in openGl which created a window and a triangle on it.
+One issue I faced here was while compiling the program. After tinkering and searching for about 30 mins, I figured out that we need to use linker flags for linking few libraries while compiling, for eg `-lGL -lglfw -lGLEW -lm` and got it running.
+- Consequently, I had to understand the pipeline and the workflow of openGL which involved use of ***Shaders*** and ***Textures*** for GPU processing.
+- One setback here was the inexperience with Cmake build system. It took me a day to get a hang of it. Finally I was able to write my own CMakeLists along with adding linkers to it. As soon as my program got built, it gave me immense joy and satisfaction.
+- After dodging all the bullets, Finally i was able to load a Image and perform post-processing on it. Here is my Github repository link to view the source code and the outputs. A detailed description about implemented algorithms and their outputs are given in the Readme file.  
+Repository link : https://github.com/KunalA18/IP-openGL
+- Few glimpses ;)
 
 
 

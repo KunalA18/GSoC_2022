@@ -24,8 +24,19 @@ sudo ninja -C build install
 ![Screenshot from 2022-04-08 11-54-00](https://user-images.githubusercontent.com/83249996/162381907-d97d9915-8d10-4341-9b48-5b3e4a235fae.png)
 
 <br> 
+
+### 2. Submitting my First Patch 
+- Had experience with sending PRs for solving issues on Github, but *email-based patch* system was relatively new for me.
+  Looking at the resources given by libcamera on their website, I began setting it up and learning how to send a patch.
+- Being not very well versed with the codebase at that time, I decided to fix documentation errors and send a patch for it.
+- After correcting few errors and learning patch system, I finally sent my first patch to libcamera. It was reviewed by the mentors and based on their suggestions I sent a v2.
+- Finally after getting the format right and getting review tags of mentors, I sent a v3 patch which was accepted and finally merged :).
+  Here's the link to the merged patch - [My_First_Patch](https://git.libcamera.org/libcamera/libcamera.git/commit/?id=a2aa1b4c4e441b7b2fb40c976489b109c1de0bc4)
+
+
+<br>
  
-### 2. Testing OpenGL on RaspberryPi 
+### 3. Testing OpenGL on RaspberryPi 
 - To run openGL on Rpi, I first enabled ***OpenGL drivers*** using `sudo raspi-config` and performed a reboot.
 - Next step involved installing glfw and other required packages.(You can find the installation steps in my Github repository. Link is shared in the next section of blog)
 - Finally i wrote a small test program and compiled it using
@@ -40,7 +51,7 @@ sudo ninja -C build install
 
 <br>
 
-### 3. Writing a standalone OpenGL application which takes an image and applies ISP function on it.
+### 4. Writing a standalone OpenGL application which takes an image and applies ISP function on it.
 - This was one of the most interesting yet overwhelming task for me as this made me learn a new language - OpenGL from scratch.   
 P.S. OpenGl is not exactly a language, but a kind of API, which helps in interacting with GPU, to achieve hardware-accelerated rendering
 - My interest in Image processing drove me towards completing this task. As a beginner, I started looking at few tutorials and documentation of OpenGl.

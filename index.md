@@ -23,9 +23,6 @@ sudo ninja -C build install
 
 <image src="https://user-images.githubusercontent.com/83249996/162377050-68ea8781-6c1c-4fa5-94a3-8f2a65888759.png" alt = "original"  width = 600> 
    
-
-<br>
-
 ### 2. Testing OpenGL on RaspberryPi 
 - To run openGL on Rpi, I first enabled ***OpenGL drivers*** using `sudo raspi-config` and performed a reboot.
 - Next step involved installing glfw and other required packages.(You can find the installation steps in my Github repository. Link is shared in the next section of blog)

@@ -19,7 +19,11 @@ libcamera-jpeg -o test.jpg
 - Finally after 
 ``
 sudo ninja -C build install
-``, got the qcam running :). 
+`` and running `build/src/qcam/qcam `, got the qcam running :). 
+<h1 align ="center">
+<image src="https://user-images.githubusercontent.com/83249996/162377050-68ea8781-6c1c-4fa5-94a3-8f2a65888759.png" alt = "original"  width = 600>
+   </h1>
+
 
 <br>
 
@@ -29,10 +33,14 @@ sudo ninja -C build install
 - Finally i wrote a small test program and compiled it using
 
 ```
-   gcc test.cpp -lGL -lGLEW -lm -lglfw -o success
+   g++ test.cpp -lGL -lGLEW -lm -lglfw -o success
 ```
 - An executable was created named 'success' and on running it, boom! glfw window was displayed.
-
+   
+ <h1 align ="center">
+<image src="https://user-images.githubusercontent.com/83249996/162379029-2bccfd43-743e-48b5-86c4-adf411a8be84.png" alt = "original"  width = 600>
+   </h1>  
+    
 <br>
 
 ### 3. Writing a standalone OpenGL application which takes an image and applies ISP function on it.
@@ -45,9 +53,13 @@ One issue I faced here was while compiling the program. After tinkering and sear
 - Consequently, I had to understand the pipeline and the workflow of openGL which involved use of ***Shaders*** and ***Textures*** for GPU processing.
 - One setback here was the inexperience with Cmake build system. It took me a day to get a hang of it. Finally I was able to write my own CMakeLists along with adding linkers to it. As soon as my program got built, it gave me immense joy and satisfaction.
 - After dodging all the bullets, Finally i was able to load a Image and perform post-processing on it. Here is my Github repository link to view the source code and the outputs. A detailed description about implemented algorithms and their outputs are given in the Readme file.  
-Repository link : https://github.com/KunalA18/IP-openGL
+Repository link : [https://github.com/KunalA18/IP-openGL](https://github.com/KunalA18/IP-openGL)
 - Few glimpses ;)
-
+   
+Original Image            |  Gamma correction
+:-------------------------:|:-------------------------:
+<image src="https://user-images.githubusercontent.com/83249996/162069982-9b99476b-c0a7-42c9-bab3-6ec0a5f695ff.png" alt = "original" width = 350> |   <image src="https://user-images.githubusercontent.com/83249996/162070112-c7bce182-80f7-4010-82b8-201f4f90118a.png" alt = "gamma_correction" width = 350> 
+   
 
 
 

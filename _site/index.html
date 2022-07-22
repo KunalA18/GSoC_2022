@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d07d72255b93beb3027cbaddcfa9dc3bf600e671">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gearing up for GSoC 2022 | April 7, 2022</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Gearing up for GSoC 2022" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="April 7, 2022" />
+<meta property="og:description" content="April 7, 2022" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Gearing up for GSoC 2022" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gearing up for GSoC 2022" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"April 7, 2022","headline":"Gearing up for GSoC 2022","name":"Gearing up for GSoC 2022","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>Gearing up for GSoC 2022</h1>
+        </a>
+        <h2>April 7, 2022</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/KunalA18/GSoC_2022" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>Hello, I am Kunal Agarwal from VJTI, Mumbai. This is the first time I’ll be applying for GSoC. After going through a vast array of Organisations and learning about their projects, I finally found “<em>OpenGL/OpenCL software ISP</em>” project of <strong>libcamera</strong> most interesting.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>I joined the IRC, subscribed to libcamera’s mailing list and started exploring the project in detail. After discussion with mentors on IRC, I started with the Warmup tasks listed under my project. And to sum up my journey of completing all the warmup tasks, along with the challenges faced by me and how I solved them, I am writing this blog.</p>
+
+<h2 id="getting-warmed-up">Getting Warmed up</h2>
+<p>Warmup tasks were provided under each project for new contributors to get familiar with the code base and complete the pre-requisites of the project interested in. I too started understanding and implementing these tasks.</p>
+
+<h3 id="1-building-libcamera-with-the-raspberrypi-pipeline-enabled-and-running-qcam">1. Building libcamera with the raspberrypi pipeline enabled and running qcam.</h3>
+<ul>
+  <li>First I followed the <a href="https://libcamera.org/getting-started.html">getting started</a> section on libcamera’s website, which involved installing all dependencies and building libcamera. I was able to successfully build and test its working on my Linux PC.</li>
+  <li>To build and test it on my Raspberry Pi 3B, first I had to upgrade my Raspbian version from buster to bullseye. Also had to buy a 5MP Raspberry Pi 3B Camera Module for testing.</li>
+  <li>Since the Raspbian bullseye had libcamera and required libraries perbuilt, I was easily capture an image using
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libcamera-jpeg -o test.jpg
+</code></pre></div>    </div>
+  </li>
+  <li>My next target was to build libcamera on Rpi from source. Installed all the dependencies and built libcamera successfully using same steps as on PC.</li>
+  <li>Next step was running qcam. For this I enabled raspberryPi pipeline using <code class="language-plaintext highlighter-rouge">-Dpipelines=raspberrypi</code>, enabled ipa on Rpi <code class="language-plaintext highlighter-rouge">-Dipas=raspberrypi</code> and enabled qcam using <code class="language-plaintext highlighter-rouge">-Dqcam=enabled</code> while building meson.</li>
+  <li>Finally after 
+<code class="language-plaintext highlighter-rouge">
+sudo ninja -C build install
+</code>, got the qcam running :).</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="2-testing-opengl-on-raspberrypi">2. Testing OpenGL on RaspberryPi</h3>
+<ul>
+  <li>To run openGL on Rpi, I first enabled <strong><em>OpenGL drivers</em></strong> using <code class="language-plaintext highlighter-rouge">sudo raspi-config</code> and performed a reboot.</li>
+  <li>Next step involved installing glfw and other required packages.(You can find the installation steps in my Github repository. Link is shared in the next section of blog)</li>
+  <li>Finally i wrote a small test program and compiled it using</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   gcc test.cpp -lGL -lGLEW -lm -lglfw -o success
+</code></pre></div></div>
+<ul>
+  <li>An executable was created named ‘success’ and on running it, boom! glfw window was displayed.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="3-writing-a-standalone-opengl-application-which-takes-an-image-and-applies-isp-function-on-it">3. Writing a standalone OpenGL application which takes an image and applies ISP function on it.</h3>
+<ul>
+  <li>This was one of the most interesting yet overwhelming task for me as this made me learn a new language - OpenGL from scratch. <br />
+P.S. OpenGl is not exactly a language, but a kind of API, which helps in interacting with GPU, to achieve hardware-accelerated rendering</li>
+  <li>My interest in Image processing drove me towards completing this task. As a beginner, I started looking at few tutorials and documentation of OpenGl.</li>
+  <li>Next step involved setting up OpenGl by installing all dependencies. (All installation steps are mentioned in my github repository, shared below)</li>
+  <li>Finally after setting it up, I wrote a test (hello world) program in openGl which created a window and a triangle on it.
+One issue I faced here was while compiling the program. After tinkering and searching for about 30 mins, I figured out that we need to use linker flags for linking few libraries while compiling, for eg <code class="language-plaintext highlighter-rouge">-lGL -lglfw -lGLEW -lm</code> and got it running.</li>
+  <li>Consequently, I had to understand the pipeline and the workflow of openGL which involved use of <strong><em>Shaders</em></strong> and <strong><em>Textures</em></strong> for GPU processing.</li>
+  <li>One setback here was the inexperience with Cmake build system. It took me a day to get a hang of it. Finally I was able to write my own CMakeLists along with adding linkers to it. As soon as my program got built, it gave me immense joy and satisfaction.</li>
+  <li>After dodging all the bullets, Finally i was able to load a Image and perform post-processing on it. Here is my Github repository link to view the source code and the outputs. A detailed description about implemented algorithms and their outputs are given in the Readme file.<br />
+Repository link : https://github.com/KunalA18/IP-openGL</li>
+  <li>Few glimpses ;)</li>
+</ul>
+
+
+      </section>
+    </div>
+  </body>
+</html>
